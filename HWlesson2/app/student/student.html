@@ -1,0 +1,20 @@
+
+
+@for(s of studentList; track s; ){
+    <div>student name: {{s.name}}</div>
+    <div>student grade: {{s.grade}}</div>
+    <div>student clas: {{s.clas}}</div>
+    @if(s.showButtons){
+    <button  (click)="out(s)" >out student</button>
+    @if(s.grade==100){
+    <button (click)="best(s)" >the best student:</button>
+        <div>"best student!"</div>
+    }
+    
+}
+    
+}
+
+@for(s of bestList; track s; ){
+    <div>the bests studens is: {{s.name}}</div>
+}
