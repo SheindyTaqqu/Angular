@@ -1,0 +1,9 @@
+
+<h2>Hospital babies:</h2>
+
+@for (b of baby; track b) {
+  <app-babys
+    [babyDetails]="b"
+    (removeItemEvent)="deleteItemParent($event)">
+  </app-babys>
+}
