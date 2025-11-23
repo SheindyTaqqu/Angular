@@ -101,7 +101,7 @@ export class Drivers implements OnInit {
     this.loadDrivers();
   }
 
-  // טען את כל הנהגים בכניסה למסך
+
   loadDrivers() {
     this.apiCallService.get("/drivers").subscribe({
       next: (data) => this.drivers = data,
@@ -109,18 +109,18 @@ export class Drivers implements OnInit {
     });
   }
 
-  // הוספת נהג
+
   addDriver() {
     this.apiCallService.post("/drivers", this.newDriver).subscribe({
       next: () => {
         this.loadDrivers(); 
-        this.newDriver = { id: 0, name: '' }; // אפס טופס
+        this.newDriver = { id: 0, name: '' };
       },
       error: (error) => console.error(error)
     });
   }
 
-  // מחיקת נהג
+
   deleteDriver(id: number) {
     this.apiCallService.delete("/drivers", id).subscribe({
       next: () => this.loadDrivers(),
@@ -128,4 +128,5 @@ export class Drivers implements OnInit {
     });
   }
 }
+
 
